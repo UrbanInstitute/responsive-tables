@@ -84,14 +84,14 @@ var DataGridRenderer = {
     var outputText = "";
     var numRows = dataGrid.length;
     var numColumns = headerNames.length;
-    
+    outputText += "<style type=\"text/css\">table{border-collapse:collapse;padding:0;margin:0 0 11px;width:100%}table th{border-bottom:2px solid #eee;vertical-align:bottom;padding:0 10px 10px;text-align:right;background-color:#fff}table td{border-bottom:1px solid #eee;vertical-align:top;padding:10px;text-align:right}table td:nth-child(1),table th:nth-child(1){text-align:left;padding-left:0;font-weight:700}@media screen and (max-width:600px){table,tbody{display:block;width:500px!important}table td:empty,thead{display:none}table td,table th,table tr{display:block;padding:0;text-align:left;white-space:normal}table tr{border-bottom:1px solid #eee;padding-bottom:11px;margin-bottom:11px}table td[data-title]:before,table th[data-title]:before{content:attr(data-title) \":\00A0\";font-weight:700}table td{border:none;margin-bottom:6px;color:#444}table td:first-child{font-size:1.1em;font-weight:700;margin-bottom:6px;color:#333}table td:first-child:before{content:''}}</style>"
     //begin render loop
     outputText += "<table>"+newLine;
     outputText += indent+"<thead>"+newLine;
     outputText += indent+indent+"<tr>"+newLine;
     
     for (var j=0; j < numColumns; j++) {
-      outputText += indent+indent+indent+'<th class="'+headerNames[j]+'-cell">';          
+      outputText += indent+indent+indent+'<th>';          
       outputText += headerNames[j];
       outputText += '</th>'+newLine;
     };
@@ -101,14 +101,9 @@ var DataGridRenderer = {
     for (var i=0; i < numRows; i++) {
       var row = dataGrid[i];
       var rowClassName = ""
-      if (i === numRows-1) {
-        rowClassName = ' class="lastRow"';
-      } else if (i === 0){
-        rowClassName = ' class="firstRow"';
-      }
       outputText += indent+indent+"<tr"+rowClassName+">"+newLine;
       for (var j=0; j < numColumns; j++) {
-        outputText += indent+indent+indent+'<td class="'+headerNames[j]+'-cell">';          
+        outputText += indent+indent+indent+'<td data-title="'+headerNames[j]+'">';          
         outputText += row[j]
         outputText += '</td>'+newLine
       };

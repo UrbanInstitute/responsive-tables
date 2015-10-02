@@ -14,12 +14,16 @@ Mr. Data Converter styles
 
 
 html {
-	font-family: Helvetica, Arial;
-	background: #141414 url('../images/background.png') no-repeat;
+	font-family: Lato, Helvetica, Arial;
+	background: #141414;
 }
 
 body {
   overflow: hidden;
+}
+
+*:focus{
+  outline: none;
 }
 
 #base {
@@ -39,7 +43,7 @@ body {
 	overflow: auto;
 }
 #header a {
-	color: #99FFFF;
+	color: #eb99c2;
 /*  opacity: 0.7;*/
 }
 
@@ -61,7 +65,7 @@ body {
 
 h1 {
   color: #DEDEDE;
-  font-family: palatino, Georgia;
+  font-family: Lato, Georgia;
 	font-size: 40px;
 	line-height: 40px;
 	font-weight: bold;
@@ -114,7 +118,7 @@ p.dataHeaders{
 
 .textInputs {
   
-  background-color: #C9B7C7;
+  background-color: #e4eef9;
   border: none;
   color: #664D63;
   font-family: monospace;
@@ -132,8 +136,12 @@ p.dataHeaders{
   width: 100%;
   color: #FFF;
   height: 45px;
-  background-color:#5F255C;
-  background-image: url('../images/header_gradient.png');
+  background-color:#1696d2;
+  /*background-image: url('../images/header_gradient.png');*/
+}
+
+.groupHeader.hide p{
+  display: none;
 }
 
 
@@ -146,7 +154,7 @@ p.groupHeadline {
 }
 
 .groupHeader a {
-  color: #FF66FF;
+  color: #fdbf11;
 }
 
 
